@@ -860,4 +860,5 @@ app.get('/logout', (req, res) => {
 })
 
 //app.listen(4000, ()=> console.log('app running in port 4000'))
-server.listen(5000, () => console.log(`Example app listening on port ${5000}!`))
+const port = process.env.PORT || 5000
+server.listen(port, () => console.log(`Example app listening on port ${5000}!`))
