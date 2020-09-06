@@ -18,7 +18,7 @@ passport.serializeUser(function (user, done) {
     From the user take just the id (to minimize the cookie size) and just pass the id of the user
     to the done callback
     PS: You dont have to do it like this its just usually done like this
-    */
+    */console.log(user)
     done(null, user);
 });
 
