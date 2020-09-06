@@ -9,7 +9,7 @@ exports.getDatabaseConnection = function (dbName) {
         //database connection already exist. Return connection object
         return connections[dbName];
     } else {
-        connections[dbName] = mongoose.createConnection(process.env.MONGO_URL + dbName + '?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
+        connections[dbName] = mongoose.createConnection('mongodb+srv://slack_node_client:ak0mJCgJiMX5Inyx@cluster0.3ayeo.mongodb.net/' + dbName + '?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
         return connections[dbName];
     }
 }
