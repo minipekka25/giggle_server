@@ -93,7 +93,10 @@ rooms.use((socket, next) => {
     let res = { getHeader: () => { }, setHeader: () => { } };
     
     cookie(req, res, () => {
-        socket.googleId = req.session.passport.user.id
+        if (req.session.passport.user.id){
+            socket.googleId = req.session.passport.user.id
+        }
+
     })
    
     next();
