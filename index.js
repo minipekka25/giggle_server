@@ -62,11 +62,13 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 // parse application/json
 app.use(bodyParser.json())
-app.set('trust proxy', 1)
+
 // For an actual app you should configure this with an experation time, better keys, proxy and secure
 let cookie = cookieSession({
     name: 'slack-session',
-    keys: ['fgyuhijf82f3y49hioj', 'dcfvgyhu8r029ergf2hdui']
+    keys: ['fgyuhijf82f3y49hioj', 'dcfvgyhu8r029ergf2hdui'],
+    secureProxy: true
+
 })
 app.use(cookie)
 
