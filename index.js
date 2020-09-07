@@ -62,16 +62,21 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 // parse application/json
 app.use(bodyParser.json())
+app.enable('trust proxy')
 app.set('trust proxy', '127.0.0.1')
 
 // For an actual app you should configure this with an experation time, better keys, proxy and secure
 let cookie = cookieSession({
     name: 'slack-session',
     keys: ['fgyuhijf82f3y49hioj', 'dcfvgyhu8r029ergf2hdui'],
-    secureProxy: true
+    secureProxy: true,
+    secure : false,
+     maxAge: 5184000000
 
 })
 app.use(cookie)
+
+
 
 // Auth middleware that checks if the user is logged in
 const isLoggedIn = (req, res, next) => {
